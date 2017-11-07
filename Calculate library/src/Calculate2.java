@@ -52,23 +52,25 @@ public class Calculate2 {
 		return MixedNum;
 	}
 	//this method converts a binomial multiplication into a quadratic equation
-	public static String foil(int ad,int bd, int cd, int dd) {
+	public static String foil(int ad,int bd, int cd, int dd, String x) {
 		int aa = cd * ad;
 		int bb = (ad*dd) + (bd*cd);
 		int cc = (bd*dd);
-		String foil = aa+"x^2"+"+" +bb+"x" +"+"+ cc;
+		String foil = aa+x+"^2"+"+" +bb+x +"+"+ cc;
 		return foil;
 	}
 	//this method accepts two integers and returns boolean
-	public static boolean isdivisibleby(int num1,int num2) {
-		if(num1%num2 == 0) {
-			return true;
+		public static boolean isDivisibleBy(int num1, int num2) {
+			if (num2 == 0) {
+				throw new IllegalArgumentException("The denominator cannot be 0");
+			}
+			if (num1 % num2 == 0) {
+				return true;
+			}else {
+				return false;
+			}
 		}
-		else {
-			return false;
-		}
-	
-	}
+		
 	//this method accepts a double and returns a double
 	public static double abslutevalue(double num) {
 	
@@ -146,17 +148,21 @@ public class Calculate2 {
 		}
 	}
 	// this takes in an integer and returns back a boolean
-	public static boolean isprime(int num)  { 
-	
-	for(int i = 4; i <= 10; i++){
-        return isdivisibleby(num,i); 			
+	public static boolean isPrime(int num) {
+		if (num <= 0) {
+			return false;
 		}
-	return false;
+		for(int i = 2; i <= num - 1; i++) {
+			if (Calculate2.isDivisibleBy(num, i) == true) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	// the method inputs two integers and returns an integer
 	public static int gcf(int num1, int num2){
-		if(isprime(num1) == false) {
+		if(isPrime(num1) == false) {
 			if(max(num1,num2)%min(num1, num2) != 0) {
 				return 1;
 			}else {

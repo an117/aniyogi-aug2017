@@ -14,8 +14,8 @@ public class Domath {
 		System.out.println(Calculate2.discriminant(3.0,4.0,5.0));
 		System.out.println(Calculate2.toImproperFrac(3,4,5));
 		System.out.println(Calculate2.toMixedNum(3,4));
-		System.out.println(Calculate2.foil(3,4,5,6));
-		System.out.println(Calculate2.isdivisibleby(3,3));
+		System.out.println(Calculate2.foil(3,4,5,6, "x"));
+		System.out.println(Calculate2.isDivisibleBy(3,3));
 		System.out.println(Calculate2.abslutevalue(3));
 		System.out.println(Calculate2.max(3.0,5.0));
 		System.out.println(Calculate2.max(3.0,5.0,4.0));
@@ -23,7 +23,7 @@ public class Domath {
 		System.out.println(Calculate2.round2(3.44));
 		System.out.println(Calculate2.exponent(3,2));
 		System.out.println(Calculate2.factorial(3));
-		System.out.println(Calculate2.isprime(2));
+		System.out.println(Calculate2.isPrime(2));
 		System.out.println(Calculate2.gcf(3,7));
 		System.out.println(Calculate2.sqrt(120)); 
 		System.out.println(Calculate2.quadForm(1,1,-5));
